@@ -11,6 +11,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Auth = lazy(() => import("./pages/Auth"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Admin = lazy(() => import("./pages/Admin"));
+const CapacityBuilder = lazy(() => import("./pages/CapacityBuilder"));
 
 function PublicLayout({ children }) {
   return <><Navbar />{children}<Footer /><Chatbot /></>;
@@ -36,6 +37,7 @@ export default function App() {
 
   return <AuthProvider><BrowserRouter><ScrollManager /><Toaster position="top-center" richColors theme="dark" /><Suspense fallback={<div className="grid min-h-screen place-items-center bg-ink text-white/50">جاري تحميل المنصة...</div>}><Routes>
     <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
+    <Route path="/capacity-builder" element={<PublicLayout><CapacityBuilder /></PublicLayout>} />
     <Route path="/auth" element={<Auth />} />
     <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
     <Route path="/admin" element={<ProtectedRoute adminOnly><Admin /></ProtectedRoute>} />

@@ -61,6 +61,133 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(2.9rem, 6.45vw, 7.15rem);
 }
 
+/* Executive intelligence layer for the unused left side of the home hero. */
+@media (min-width: 1024px) {
+  [data-testid="hero"]::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 0;
+    width: 43%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .34;
+    background-image:
+      linear-gradient(90deg, rgba(13, 9, 20, .58) 0%, rgba(13, 9, 20, .72) 48%, rgba(13, 9, 20, .98) 100%),
+      url("https://images.pexels.com/photos/38096888/pexels-photo-38096888.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-position: center;
+    background-size: cover;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 64%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 64%, transparent 100%);
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+    align-self: end;
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, .11);
+    border-radius: 1.75rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .025));
+    box-shadow: 0 28px 90px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .08);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child::before,
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child::after,
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::before,
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::after {
+    display: grid;
+    min-height: 94px;
+    align-content: center;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 1.1rem;
+    background-color: rgba(13, 9, 20, .52);
+    background-image: radial-gradient(circle at 90% 10%, rgba(139, 92, 246, .18), transparent 42%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+    color: rgba(255, 255, 255, .72);
+    font-family: Alexandria, Cairo, system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.55;
+    white-space: pre-line;
+    animation: executiveMetricIn .72s cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child::before {
+    content: "+120\Aمشروعاً وبرنامجاً";
+    animation-delay: .32s;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child::after {
+    content: "18\Aقطاعاً مخدوماً";
+    animation-delay: .4s;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+    max-width: none;
+    margin: 0;
+    color: transparent;
+    font-size: 0;
+    line-height: 1;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::before {
+    content: "92%\Aتوصيات قابلة للتنفيذ";
+    animation-delay: .48s;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::after {
+    content: "4.8/5\Aرضا الشركاء";
+    animation-delay: .56s;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > div:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 0;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > div:last-child::before {
+    content: "بيت خبرة سعودي يقدّم حلولاً استراتيجية في الاستشارات وريادة الأعمال وبناء القدرات، ويرافق القيادات والكيانات من التشخيص إلى التنفيذ.";
+    flex-basis: 100%;
+    order: -3;
+    margin: .25rem 0 .15rem;
+    color: rgba(255, 255, 255, .63);
+    font-size: .92rem;
+    line-height: 1.9;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > div:last-child::after {
+    content: "منظور تنفيذي سعودي  ·  الجاهزية التنفيذية 87%";
+    flex-basis: 100%;
+    order: -2;
+    padding: .9rem 1rem 1.1rem;
+    border: 1px solid rgba(139, 92, 246, .24);
+    border-radius: 1rem;
+    background:
+      linear-gradient(90deg, #8b5cf6, #b9a2ff) bottom left / 87% 3px no-repeat,
+      rgba(139, 92, 246, .075);
+    color: rgba(255, 255, 255, .78);
+    font-size: .78rem;
+    font-weight: 700;
+    animation: executiveMetricIn .72s .64s cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > div:last-child > button {
+    margin-top: .1rem;
+  }
+}
+
 .glass { background: rgba(13, 9, 20, .72); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.1); }
 .soft-grid {
   background-image: linear-gradient(rgba(74,35,90,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(74,35,90,.07) 1px, transparent 1px);
@@ -85,6 +212,11 @@ a { color: inherit; text-decoration: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+@keyframes executiveMetricIn {
+  from { opacity: 0; transform: translateY(14px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes marquee {

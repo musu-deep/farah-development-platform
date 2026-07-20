@@ -37,6 +37,7 @@ export default function Navbar() {
       <nav className={`mx-auto flex max-w-[1460px] items-center justify-between px-5 py-4 transition-[background-color,border-color,backdrop-filter,border-radius] duration-300 lg:px-8 ${scrolled ? "rounded-2xl border border-white/10 bg-ink/80 text-white backdrop-blur-xl" : "border-b border-white/10 bg-transparent text-white"}`}>
         <Link to="/" data-testid="nav-logo"><Logo dark /></Link>
         <div className="hidden items-center gap-8 lg:flex">
+          <Link to="/capacity-builder" className="text-sm text-white/65 transition-colors hover:text-white" data-testid="nav-capacity-builder">مركز بناء القدرات</Link>
           {links.map(([label, hash]) => <button key={hash} onClick={() => go(hash)} className="text-sm text-white/65 transition-colors hover:text-white" data-testid={`nav-${hash.slice(1)}`}>{label}</button>)}
         </div>
         <div className="hidden items-center gap-3 lg:flex">
@@ -53,6 +54,7 @@ export default function Navbar() {
         {open && (
           <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} className="mx-3 mt-2 rounded-2xl border border-white/10 bg-ink/95 p-6 text-white backdrop-blur-xl lg:hidden">
             <div className="flex flex-col gap-4">
+              <Link to="/capacity-builder" onClick={() => setOpen(false)} className="border-b border-white/10 pb-3 text-start text-white/75">مركز بناء القدرات</Link>
               {links.map(([label, hash]) => <button key={hash} onClick={() => go(hash)} className="border-b border-white/10 pb-3 text-start text-white/75">{label}</button>)}
               <Link to={user ? (user.role === "admin" ? "/admin" : "/dashboard") : "/auth"} onClick={() => setOpen(false)} className="rounded-full bg-violet px-5 py-3 text-center font-bold">{user ? "لوحة التحكم" : "تسجيل الدخول"}</Link>
             </div>

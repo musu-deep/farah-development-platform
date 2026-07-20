@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Tajawal", "sans-serif"],
-        display: ["Noto Serif Arabic", "serif"],
+        body: ["Cairo", "system-ui", "sans-serif"],
+        display: ["Alexandria", "Cairo", "system-ui", "sans-serif"],
       },
       colors: {
         ink: "#0D0914",

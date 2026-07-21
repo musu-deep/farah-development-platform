@@ -18,6 +18,6 @@ export const methodology = [
 
 export const cases = [
   { category: "تحول مؤسسي", title: "إعادة تصميم نموذج تشغيل لكيان متعدد الفروع", metric: "34%", label: "تحسن في زمن اتخاذ القرار", image: "https://images.pexels.com/photos/36405564/pexels-photo-36405564.jpeg?auto=compress&cs=tinysrgb&w=1400" },
-  { category: "بناء قدرات", title: "أكاديمية قيادات مرتبطة بمؤشرات الأداء", metric: "91%", label: "نسبة إتمام المسارات التطبيقية", image: "https://images.pexels.com/photos/36765718/pexels-photo-36765718.jpeg?auto=compress&cs=tinysrgb&w=1400" },
+  { category: "بناء قدرات", title: "أكاديمية قيادات مرتبطة بمؤشرات الأداء", metric: "91%", label: "نسبة إتمام المسارات التطبيقية", image: "https://images.pexels.com/photos/7567218/pexels-photo-7567218.jpeg?auto=compress&cs=tinysrgb&w=1400" },
   { category: "مراجعة أداء", title: "لوحة قيادة تنفيذية لبرنامج تنموي", metric: "12", label: "مؤشراً حرجاً جرى توحيدها", image: "https://images.pexels.com/photos/338400/pexels-photo-338400.jpeg?auto=compress&cs=tinysrgb&w=1400" },
 ];

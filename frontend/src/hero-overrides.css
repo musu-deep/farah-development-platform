@@ -1,0 +1,45 @@
+@media (min-width: 1024px) {
+  /* Lift the headline into the unused upper space without moving the data panel. */
+  [data-testid="hero"] .relative.z-10 > .grid > :first-child {
+    margin-bottom: clamp(4.5rem, 9vh, 6rem);
+  }
+
+  /* Lock the second pair of metrics into one clean, even 2x2 grid row. */
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p {
+    position: relative;
+    display: block !important;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 88px;
+    min-height: 88px;
+    overflow: hidden;
+    color: transparent !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::before,
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::after {
+    position: absolute;
+    inset-block: 0;
+    width: calc(50% - .375rem);
+    height: 88px;
+    min-height: 88px;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::before {
+    right: 0;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child > p::after {
+    left: 0;
+  }
+
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child::before,
+  [data-testid="hero"] .relative.z-10 > .grid > :last-child::after {
+    height: 88px;
+    min-height: 88px;
+  }
+}

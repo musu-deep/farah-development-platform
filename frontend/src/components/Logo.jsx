@@ -1,15 +1,18 @@
-export default function Logo({ compact = false, dark = false }) {
+export default function Logo({ compact = false, footer = false, className = "" }) {
+  const size = footer
+    ? "h-[88px] w-auto max-w-[320px] sm:h-[96px]"
+    : compact
+      ? "h-11 w-auto max-w-[150px]"
+      : "h-[50px] w-auto max-w-[220px] lg:h-[56px] lg:max-w-[250px]";
+
   return (
-    <div className="flex items-center gap-3">
-      <div className="grid h-11 w-11 place-items-center border border-violet/40 bg-violet text-xl font-black text-white shadow-violet">
-        ف
-      </div>
-      {!compact && (
-        <div>
-          <div className={`font-display text-lg font-bold leading-none ${dark ? "text-white" : "text-deep"}`}>شركة فرح التنمية</div>
-          <div className={`mt-1 text-[9px] font-bold tracking-[.24em] ${dark ? "text-white/45" : "text-plum/55"}`}>FARAH DEVELOPMENT</div>
-        </div>
-      )}
-    </div>
+    <img
+      src="/farah-logo.svg"
+      alt="فرح التنمية - Farah Development"
+      width="480"
+      height="120"
+      className={`block object-contain object-right ${size} ${className}`}
+      decoding="async"
+    />
   );
 }

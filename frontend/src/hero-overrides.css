@@ -1,4 +1,18 @@
+/* Give the large Arabic headline enough vertical breathing room for dots and letterforms. */
+[data-testid="hero"] h1 {
+  line-height: 1.16 !important;
+}
+
+[data-testid="hero"] h1 > span + span {
+  margin-top: .08em;
+}
+
 @media (min-width: 1024px) {
+  /* Slightly wider spacing on large displays where the headline is at maximum scale. */
+  [data-testid="hero"] h1 {
+    line-height: 1.18 !important;
+  }
+
   /* Lift the headline into the unused upper space without moving the data panel. */
   [data-testid="hero"] .relative.z-10 > .grid > :first-child {
     margin-bottom: clamp(4.5rem, 9vh, 6rem);

@@ -18,6 +18,19 @@ const series = {
       { src: "/posters/sustainability/07-covenant.webp", title: "عهد الزمن" },
     ],
   },
+  fission: {
+    label: "انشطار القيمة",
+    description: "تأملات في القيمة حين تنقسم دون أن تنقص؛ فتغادر مركزها لتتكاثر أثرًا ومعنىً في محيطها.",
+    posters: [
+      { src: "/posters/value-fission/01-liberated-impact.webp", title: "تحرير الأثر" },
+      { src: "/posters/value-fission/02-market-and-meaning.webp", title: "السوق والمعنى" },
+      { src: "/posters/value-fission/03-shared-value.webp", title: "قيمة تُشارك" },
+      { src: "/posters/value-fission/04-distributed-impact.webp", title: "توزّع الأثر" },
+      { src: "/posters/value-fission/05-value-fission.webp", title: "انشطار القيمة" },
+      { src: "/posters/value-fission/06-replicable-impact.webp", title: "أثر قابل للتكاثر" },
+      { src: "/posters/value-fission/07-meaning-multiplies.webp", title: "المعنى يتكاثر" },
+    ],
+  },
   singularity: {
     label: "The Singularity",
     description: "برامج تستشرف ما بعد التحول؛ حيث تتسارع المعرفة، وتتغير نماذج الأعمال، وتُعاد كتابة المستقبل.",
@@ -45,6 +58,8 @@ const series = {
     ],
   },
 } as const;
+
+const seriesOrder: Array<keyof typeof series> = ["sustainability", "fission", "abundance", "singularity"];
 
 export default function PosterWall() {
   const [selected, setSelected] = useState<number | null>(null);
@@ -80,7 +95,7 @@ export default function PosterWall() {
           <h2 id="poster-wall-title">أفكارٌ تُرى.<br /><em>ومعانٍ تبقى.</em></h2>
         </div>
         <div className="poster-wall-note">
-          <span>السلسلة {activeSeries === "sustainability" ? "الأولى" : activeSeries === "abundance" ? "الثانية" : "الثالثة"}</span>
+          <span>السلسلة {(["الأولى", "الثانية", "الثالثة", "الرابعة"])[seriesOrder.indexOf(activeSeries)]}</span>
           <h3>{currentSeries.label}</h3>
           <p>{currentSeries.description}</p>
           <small><MoveHorizontal size={14} /> حرّك المؤشر لاستكشاف الحائط — واضغط للتكبير</small>
@@ -88,7 +103,7 @@ export default function PosterWall() {
       </div>
 
       <div className="series-switch" role="tablist" aria-label="سلاسل حائط الأفكار">
-        {(["sustainability", "abundance", "singularity"] as Array<keyof typeof series>).map((key, index) => (
+        {seriesOrder.map((key, index) => (
           <button key={key} type="button" role="tab" aria-selected={activeSeries === key} className={activeSeries === key ? "active" : ""} onClick={() => { setActiveSeries(key); setSelected(null); railRef.current?.scrollTo({ left: 0, behavior: "smooth" }); }}>
             <span>0{index + 1}</span>{series[key].label}<b>{series[key].posters.length}</b>
           </button>

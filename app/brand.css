@@ -185,8 +185,8 @@ body {
   .poster-wall-head { margin-bottom: 38px; }
   .poster-wall-head h2 { font-size: 48px; }
   .poster-wall-note { padding-right: 16px; }
-  .series-switch { width: 100%; margin: -10px 0 25px; border-radius: 14px; }
-  .series-switch button { flex: 1; justify-content: center; padding-inline: 9px; }
+  .series-switch { width: 100%; margin: -10px 0 25px; overflow-x: auto; border-radius: 14px; scrollbar-width: none; }
+  .series-switch button { flex: 0 0 auto; justify-content: center; padding-inline: 13px; }
   .series-switch button span { display: none; }
   .poster-stage { min-height: 370px; padding: 20px 0 45px; }
   .poster-stage::before { inset-inline: -3vw; }

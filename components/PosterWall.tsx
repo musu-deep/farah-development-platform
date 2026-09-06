@@ -18,6 +18,45 @@ const series = {
       { src: "/posters/sustainability/07-covenant.webp", title: "عهد الزمن" },
     ],
   },
+  reconfiguration: {
+    label: "إعادة التهيئة والاستعداد",
+    description: "الاستعداد ليس انتظار القادم؛ بل إعادة بناء الداخل كي نرى في التحول إمكانًا لا صدمة.",
+    posters: [
+      { src: "/posters/reconfiguration/01-future.webp", title: "بناء المستقبل" },
+      { src: "/posters/reconfiguration/02-system.webp", title: "غيّر قابلية النظام" },
+      { src: "/posters/reconfiguration/03-shock.webp", title: "التحول قبل الصدمة" },
+      { src: "/posters/reconfiguration/04-today.webp", title: "استعداد اليوم" },
+      { src: "/posters/reconfiguration/05-reconnect.webp", title: "إعادة التهيئة" },
+      { src: "/posters/reconfiguration/06-flexibility.webp", title: "مرونة توزيع القوة" },
+      { src: "/posters/reconfiguration/07-readiness.webp", title: "الجاهز يبدأ من الصفر" },
+    ],
+  },
+  impact: {
+    label: "الأثر وصناعة القيمة",
+    description: "القيمة لا تكتمل بما تحققه من ربح، بل بما يبقى من أثر حين تنتهي دفاتر الحساب.",
+    posters: [
+      { src: "/posters/impact-value/01-root.webp", title: "جذر القيمة" },
+      { src: "/posters/impact-value/02-survival.webp", title: "ما يستحق البقاء" },
+      { src: "/posters/impact-value/03-spend-and-ask.webp", title: "المنفعة والقيمة" },
+      { src: "/posters/impact-value/04-beyond-ledgers.webp", title: "ما بعد الحساب" },
+      { src: "/posters/impact-value/05-continuity.webp", title: "قيمة تستحق الاستمرار" },
+      { src: "/posters/impact-value/06-transformation.webp", title: "صناعة القيمة" },
+      { src: "/posters/impact-value/07-life.webp", title: "من المنتج إلى الحياة" },
+    ],
+  },
+  nucleus: {
+    label: "النواة والظل",
+    description: "كل اتساع يبدأ من نواة؛ وكل أثر ظاهر هو ظلّ لمعنى صغير اختار أن يتجذّر في العمق.",
+    posters: [
+      { src: "/posters/nucleus-shadow/01-extension.webp", title: "امتداد النواة" },
+      { src: "/posters/nucleus-shadow/02-shadow.webp", title: "اتساع الظل" },
+      { src: "/posters/nucleus-shadow/03-roots.webp", title: "الجذر أولًا" },
+      { src: "/posters/nucleus-shadow/04-tree.webp", title: "بداية الشجرة" },
+      { src: "/posters/nucleus-shadow/05-value-shadow.webp", title: "ظل القيمة" },
+      { src: "/posters/nucleus-shadow/06-world.webp", title: "النواة تغيّر العالم" },
+      { src: "/posters/nucleus-shadow/07-small-core.webp", title: "نواة صغيرة" },
+    ],
+  },
   fission: {
     label: "انشطار القيمة",
     description: "تأملات في القيمة حين تنقسم دون أن تنقص؛ فتغادر مركزها لتتكاثر أثرًا ومعنىً في محيطها.",
@@ -59,7 +98,8 @@ const series = {
   },
 } as const;
 
-const seriesOrder: Array<keyof typeof series> = ["sustainability", "fission", "abundance", "singularity"];
+const seriesOrder: Array<keyof typeof series> = ["sustainability", "reconfiguration", "impact", "nucleus", "fission", "abundance", "singularity"];
+const seriesOrdinals = ["الأولى", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة"];
 
 export default function PosterWall() {
   const [selected, setSelected] = useState<number | null>(null);
@@ -95,7 +135,7 @@ export default function PosterWall() {
           <h2 id="poster-wall-title">أفكارٌ تُرى.<br /><em>ومعانٍ تبقى.</em></h2>
         </div>
         <div className="poster-wall-note">
-          <span>السلسلة {(["الأولى", "الثانية", "الثالثة", "الرابعة"])[seriesOrder.indexOf(activeSeries)]}</span>
+          <span>السلسلة {seriesOrdinals[seriesOrder.indexOf(activeSeries)]}</span>
           <h3>{currentSeries.label}</h3>
           <p>{currentSeries.description}</p>
           <small><MoveHorizontal size={14} /> حرّك المؤشر لاستكشاف الحائط — واضغط للتكبير</small>

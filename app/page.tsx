@@ -1,3 +1,5 @@
+import PosterWall from "@/components/PosterWall";
+
 const services = [
   { n: "01", title: "الاستراتيجية والتطوير المؤسسي", text: "خطط قابلة للتنفيذ، نماذج تشغيلية، ومواءمة دقيقة بين التوجه والموارد والنتائج." },
   { n: "02", title: "تصميم المبادرات التنموية", text: "تحويل القضايا المجتمعية إلى مبادرات محكمة بمنطق أثر واضح وشراكات قابلة للنمو." },
@@ -32,7 +34,7 @@ export default function Home() {
   return <main dir="rtl">
     <header className="nav-wrap">
       <a className="brand brand-logo" href="#top" aria-label="فرح التنمية - الرئيسية"><img src="/farah-logo.png" alt="فرح التنمية"/></a>
-      <nav aria-label="التنقل الرئيسي"><a href="#about">عن فرح</a><a href="#services">الخدمات</a><a href="#ims">نظام IMS</a><a href="#approach">منهجيتنا</a><a href="#knowledge">المعرفة</a></nav>
+      <nav aria-label="التنقل الرئيسي"><a href="#about">عن فرح</a><a href="#services">الخدمات</a><a href="#ims">نظام IMS</a><a href="#approach">منهجيتنا</a><a href="#poster-wall">حائط الأفكار</a><a href="#knowledge">المعرفة</a></nav>
       <a className="nav-cta" href="#contact">ابدأ مشروعاً <span>↗</span></a>
     </header>
     <section className="hero" id="top">
@@ -53,8 +55,9 @@ export default function Home() {
     </section>
     <section className="approach" id="approach"><div className="approach-intro"><span className="section-no light">03 / منهجية فرح</span><h2>من الواقع،<br/>إلى الأثر.</h2><p>مسار عمل متصل يحفظ العلاقة بين التشخيص والقرار والتنفيذ والنتيجة.</p></div><ol><li><span>أ</span><div><b>نفهم</b><p>نقرأ السياق، ونستمع لأصحاب العلاقة، ونحدد جذور المسألة.</p></div></li><li><span>ب</span><div><b>نصمم</b><p>نبني الحل والنموذج والمؤشرات حول القدرة الحقيقية للمؤسسة.</p></div></li><li><span>ج</span><div><b>نُمكّن</b><p>ننقل المعرفة والأدوات إلى الفريق ليملك التنفيذ لا أن يعتمد علينا.</p></div></li><li><span>د</span><div><b>نقيس</b><p>نتتبع التحسن، ونراجع الفرضيات، ونحوّل التعلم إلى قرار.</p></div></li></ol></section>
     <section className="sectors"><span className="section-no">04 / شركاء الأثر</span><h2>نعمل مع من يرى التنمية<br/>مسؤوليةً مؤسسية.</h2><div className="sector-list">{sectors.map((s,i)=><div key={s}><span>0{i+1}</span><b>{s}</b><i>←</i></div>)}</div></section>
-    <section className="knowledge" id="knowledge"><div className="knowledge-card"><span className="section-no light">05 / المعرفة</span><small>قريباً</small><h2>المعرفة التي لا تتحول<br/>إلى ممارسة، عبءٌ أنيق.</h2><p>أدلة، أوراق عمل، ومقاييس نضج تساعد القيادات والفرق على اتخاذ قرارات أكثر وعياً.</p><a href="#contact">اطلب نشرة فرح المعرفية <span>←</span></a></div><aside><span>مبدأ فرح</span><blockquote>«التحول المؤسسي لا يبدأ من كثرة المبادرات؛ بل من وضوح ما يجب أن يتغير.»</blockquote></aside></section>
+    <PosterWall />
+    <section className="knowledge" id="knowledge"><div className="knowledge-card"><span className="section-no light">06 / المعرفة</span><small>قريباً</small><h2>المعرفة التي لا تتحول<br/>إلى ممارسة، عبءٌ أنيق.</h2><p>أدلة، أوراق عمل، ومقاييس نضج تساعد القيادات والفرق على اتخاذ قرارات أكثر وعياً.</p><a href="#contact">اطلب نشرة فرح المعرفية <span>←</span></a></div><aside><span>مبدأ فرح</span><blockquote>«التحول المؤسسي لا يبدأ من كثرة المبادرات؛ بل من وضوح ما يجب أن يتغير.»</blockquote></aside></section>
     <section className="contact" id="contact"><span>لنتحدث عن مؤسستكم</span><h2>لكل أثرٍ كبير<br/>بداية واضحة.</h2><a href="mailto:info@fasdev.org">ابدأ الحوار <i>↗</i></a></section>
-    <footer><a className="brand brand-logo footer-logo" href="#top"><img src="/farah-logo.png" alt="فرح التنمية"/></a><p>بيت خبرة سعودي يساعد المؤسسات على بناء قدرةٍ تنموية مستدامة.</p><div><a href="#about">عن فرح</a><a href="#services">الخدمات</a><a href="#knowledge">المعرفة</a></div><small>© 2026 فرح التنمية. جميع الحقوق محفوظة.</small></footer>
+    <footer><a className="brand brand-logo footer-logo" href="#top"><img src="/farah-logo.png" alt="فرح التنمية"/></a><p>بيت خبرة سعودي يساعد المؤسسات على بناء قدرةٍ تنموية مستدامة.</p><div><a href="#about">عن فرح</a><a href="#services">الخدمات</a><a href="#poster-wall">حائط الأفكار</a><a href="#knowledge">المعرفة</a></div><small>© 2026 فرح التنمية. جميع الحقوق محفوظة.</small></footer>
   </main>;
 }

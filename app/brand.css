@@ -57,6 +57,121 @@ body {
   .brand-logo::before { width: 142px; height: 48px; }
 }
 
+/* Poster wall — a gallery surface for Farah's visual thought series */
+.poster-wall {
+  position: relative;
+  padding: 128px 7vw 145px;
+  color: #fff;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(137, 82, 231, .26), transparent 27%),
+    radial-gradient(circle at 88% 84%, rgba(189, 122, 76, .14), transparent 28%),
+    linear-gradient(145deg, #10091d 0%, #211136 48%, #130c20 100%);
+}
+.poster-wall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .28;
+  background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, #000, transparent 82%);
+}
+.poster-wall-head {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 8vw;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.poster-wall-head h2 {
+  margin: 20px 0 0;
+  font-size: clamp(48px, 6.2vw, 88px);
+  line-height: 1.24;
+}
+.poster-wall-head h2 em { color: #c9adff; font-style: normal; font-weight: 500; }
+.poster-wall-note { padding-right: 24px; border-right: 1px solid rgba(213,190,255,.34); }
+.poster-wall-note > span,.poster-wall-note small { color: #bca3ea; font-size: 11px; letter-spacing: 1px; }
+.poster-wall-note h3 { margin: 10px 0 13px; font-size: 25px; }
+.poster-wall-note p { margin: 0 0 18px; color: #bdb0ca; font-size: 14px; line-height: 2; }
+.poster-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+}
+.poster-card {
+  grid-column: span 4;
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  cursor: zoom-in;
+  text-align: right;
+  border: 1px solid rgba(222, 205, 255, .18);
+  border-radius: 4px;
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 24px 70px rgba(0,0,0,.24);
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.poster-card:first-child,.poster-card:last-child { grid-column: span 6; }
+.poster-card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; transition: transform .55s ease, filter .4s ease; }
+.poster-card > span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 34px 18px 16px;
+  font: inherit;
+  font-size: 13px;
+  background: linear-gradient(transparent, rgba(10,6,18,.86));
+  transform: translateY(5px);
+  transition: transform .3s ease;
+}
+.poster-card > span b { color: #bc91ff; font-size: 10px; letter-spacing: 1px; }
+.poster-card > span i { margin-right: auto; font-style: normal; font-size: 16px; }
+.poster-card:hover,.poster-card:focus-visible { transform: translateY(-7px); border-color: rgba(209,182,255,.58); box-shadow: 0 32px 85px rgba(5,2,10,.43); outline: none; }
+.poster-card:hover img,.poster-card:focus-visible img { transform: scale(1.025); filter: saturate(1.07) contrast(1.02); }
+.poster-card:hover > span,.poster-card:focus-visible > span { transform: translateY(0); }
+.poster-dialog {
+  width: min(92vw, 900px) !important;
+  max-width: 900px !important;
+  max-height: 94vh;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: auto;
+  border: 1px solid rgba(215,193,255,.34) !important;
+  border-radius: 8px !important;
+  color: #fff;
+  background: #100a1b !important;
+  box-shadow: 0 40px 120px rgba(0,0,0,.65) !important;
+}
+.poster-dialog > button { z-index: 3; top: 14px !important; right: 14px !important; padding: 9px; color: #fff; background: rgba(14,8,25,.62); backdrop-filter: blur(10px); }
+.poster-dialog img { display: block; width: 100%; height: auto; }
+.poster-dialog-title,.poster-dialog-description { position: absolute; overflow: hidden; width: 1px; height: 1px; clip: rect(0 0 0 0); }
+
+@media (max-width: 900px) {
+  .poster-wall-head { grid-template-columns: 1fr; }
+  .poster-card,.poster-card:first-child,.poster-card:last-child { grid-column: span 6; }
+}
+@media (max-width: 560px) {
+  .poster-wall { padding: 88px 5vw 96px; }
+  .poster-wall-head { margin-bottom: 38px; }
+  .poster-wall-head h2 { font-size: 48px; }
+  .poster-wall-note { padding-right: 16px; }
+  .poster-grid { gap: 14px; }
+  .poster-card,.poster-card:first-child,.poster-card:last-child { grid-column: 1 / -1; }
+  .poster-card > span { padding: 42px 15px 14px; }
+}
+
 /* Cinematic hero and floating glass navigation */
 .nav-wrap {
   position: fixed;

@@ -31,6 +31,19 @@ const series = {
       { src: "/posters/singularity/07-future-now.webp", title: "الحاضر من المستقبل" },
     ],
   },
+  abundance: {
+    label: "النفقة والبركة",
+    description: "تأملات بصرية في عطاءٍ يخرج من الحساب، ليعود أثرًا وأجرًا وبركةً تتجاوز منطق العدد.",
+    posters: [
+      { src: "/posters/abundance/01-reward.webp", title: "ما تنفقه لله" },
+      { src: "/posters/abundance/02-beyond-number.webp", title: "من العدد إلى البركة" },
+      { src: "/posters/abundance/03-endless-effect.webp", title: "أثر بلا عدد" },
+      { src: "/posters/abundance/04-what-remains.webp", title: "ما يبقى لك" },
+      { src: "/posters/abundance/05-logic-of-blessing.webp", title: "منطق البركة" },
+      { src: "/posters/abundance/06-seed.webp", title: "النفقة بذرة" },
+      { src: "/posters/abundance/07-increase.webp", title: "زيادة تتجاوز الرقم" },
+    ],
+  },
 } as const;
 
 export default function PosterWall() {
@@ -67,7 +80,7 @@ export default function PosterWall() {
           <h2 id="poster-wall-title">أفكارٌ تُرى.<br /><em>ومعانٍ تبقى.</em></h2>
         </div>
         <div className="poster-wall-note">
-          <span>{activeSeries === "sustainability" ? "السلسلة الأولى" : "السلسلة الثانية"}</span>
+          <span>السلسلة {activeSeries === "sustainability" ? "الأولى" : activeSeries === "abundance" ? "الثانية" : "الثالثة"}</span>
           <h3>{currentSeries.label}</h3>
           <p>{currentSeries.description}</p>
           <small><MoveHorizontal size={14} /> حرّك المؤشر لاستكشاف الحائط — واضغط للتكبير</small>
@@ -75,7 +88,7 @@ export default function PosterWall() {
       </div>
 
       <div className="series-switch" role="tablist" aria-label="سلاسل حائط الأفكار">
-        {(Object.keys(series) as Array<keyof typeof series>).map((key, index) => (
+        {(["sustainability", "abundance", "singularity"] as Array<keyof typeof series>).map((key, index) => (
           <button key={key} type="button" role="tab" aria-selected={activeSeries === key} className={activeSeries === key ? "active" : ""} onClick={() => { setActiveSeries(key); setSelected(null); railRef.current?.scrollTo({ left: 0, behavior: "smooth" }); }}>
             <span>0{index + 1}</span>{series[key].label}<b>{series[key].posters.length}</b>
           </button>

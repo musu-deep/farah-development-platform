@@ -17,6 +17,45 @@ const series = {
       { src: "/posters/sustainability/06-meaning.webp", title: "بقاء المعنى" },
       { src: "/posters/sustainability/07-covenant.webp", title: "عهد الزمن" },
     ],
+    },
+  contingency: {
+    label: "Contingency Plan",
+    description: "الخطة البديلة لا تتنبأ بالفشل؛ بل تمنح القرار مساحةً أخرى حين يتوقف المسار الأول.",
+    posters: [
+      { src: "/posters/contingency/01-alternative.webp", title: "صناعة البديل" },
+      { src: "/posters/contingency/02-responsible.webp", title: "بديل مسؤول" },
+      { src: "/posters/contingency/03-last-chance.webp", title: "فرصة أخرى" },
+      { src: "/posters/contingency/04-turn.webp", title: "الوجهة الجديدة" },
+      { src: "/posters/contingency/05-route.webp", title: "الخطر والانقطاع" },
+      { src: "/posters/contingency/06-recognition.webp", title: "اعتراف متأخر" },
+      { src: "/posters/contingency/07-what-if.webp", title: "ماذا لو؟" },
+    ],
+  },
+  maximization: {
+    label: "Maximization",
+    description: "التعظيم ليس طلب المزيد دائمًا؛ بل تحرير أقصى أثر ممكن من الموارد المتاحة بأقل هدر.",
+    posters: [
+      { src: "/posters/maximization/01-return.webp", title: "أقصى عائد" },
+      { src: "/posters/maximization/02-small-decisions.webp", title: "القرارات الصغيرة" },
+      { src: "/posters/maximization/03-value.webp", title: "تعظيم القيمة" },
+      { src: "/posters/maximization/04-focus.webp", title: "تكثيف الجهد" },
+      { src: "/posters/maximization/05-outcomes.webp", title: "استحقاق التعظيم" },
+      { src: "/posters/maximization/06-sustainable-growth.webp", title: "النمو المستدام" },
+      { src: "/posters/maximization/07-impact.webp", title: "تعظيم الأثر" },
+    ],
+  },
+  illogic: {
+    label: "اللامنطق في المنطق",
+    description: "ليس كل انتظام حقيقة، ولا كل تناقض خطأ؛ أحيانًا يبدأ الفهم حين نفكك يقين القاعدة.",
+    posters: [
+      { src: "/posters/logic-illogic/01-correct-result.webp", title: "نتيجة صحيحة" },
+      { src: "/posters/logic-illogic/02-explained.webp", title: "المنطق الذي يفسّر" },
+      { src: "/posters/logic-illogic/03-rule.webp", title: "حين تصبح القاعدة قيدًا" },
+      { src: "/posters/logic-illogic/04-contradiction.webp", title: "التناقض الأوسع" },
+      { src: "/posters/logic-illogic/05-measure.webp", title: "ما لا يقبل القياس" },
+      { src: "/posters/logic-illogic/06-center.webp", title: "مركز العالم" },
+      { src: "/posters/logic-illogic/07-exception.webp", title: "الاستثناء" },
+    ],
   },
   reconfiguration: {
     label: "إعادة التهيئة والاستعداد",
@@ -98,8 +137,8 @@ const series = {
   },
 } as const;
 
-const seriesOrder: Array<keyof typeof series> = ["sustainability", "reconfiguration", "impact", "nucleus", "fission", "abundance", "singularity"];
-const seriesOrdinals = ["الأولى", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة"];
+const seriesOrder: Array<keyof typeof series> = ["sustainability", "contingency", "maximization", "illogic", "reconfiguration", "impact", "nucleus", "fission", "abundance", "singularity"];
+const seriesOrdinals = ["الأولى", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة", "العاشرة"];
 
 export default function PosterWall() {
   const [selected, setSelected] = useState<number | null>(null);

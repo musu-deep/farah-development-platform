@@ -34,7 +34,7 @@ export default function Home() {
   return <main dir="rtl">
     <header className="nav-wrap">
       <a className="brand brand-logo" href="#top" aria-label="فرح التنمية - الرئيسية"><img src="/farah-logo.png" alt="فرح التنمية"/></a>
-      <nav aria-label="التنقل الرئيسي"><a href="#about">عن فرح</a><a href="#services">الخدمات</a><a href="#ims">نظام IMS</a><a href="#approach">منهجيتنا</a><a href="#poster-wall">حائط الأفكار</a><a href="#knowledge">المعرفة</a></nav>
+      <nav aria-label="التنقل الرئيسي"><a href="#about">عن فرح</a><a href="#services">الخدمات</a><a href="#erp">أنظمة ERP</a><a href="#ims">نظام IMS</a><a href="#approach">منهجيتنا</a><a href="#poster-wall">حائط الأفكار</a><a href="#knowledge">المعرفة</a></nav>
       <a className="nav-cta" href="#contact">ابدأ مشروعاً <span>↗</span></a>
     </header>
     <section className="hero" id="top">
@@ -44,6 +44,35 @@ export default function Home() {
     </section>
     <section className="statement" id="about"><span className="section-no">01 / الرؤية</span><div><p>لسنا مزوّد خدمة ينتهي دوره عند تسليم الوثيقة.</p><h2>نحن شريكٌ يبني مع المؤسسة <mark>منطقها الداخلي</mark>؛ حتى تقودها أنظمتها، وتنمو بقدراتها، ويُرى أثرها في حياة الناس.</h2></div></section>
     <section className="services" id="services"><div className="section-head"><div><span className="section-no">02 / مجالات العمل</span><h2>خبرة تنموية<br/>متكاملة.</h2></div><p>نبدأ من السؤال الصحيح، ونصمم تدخلاً يناسب واقع المؤسسة ومرحلة نضجها—لا حزمة جاهزة تُكرر على الجميع.</p></div><div className="service-grid">{services.map(s=><article key={s.n}><span>{s.n}</span><h3>{s.title}</h3><p>{s.text}</p><i>↗</i></article>)}</div></section>
+    <section className="erp" id="erp">
+      <div className="erp-head">
+        <div><span className="section-no">خدمة متخصصة / ERP</span><h2>من التعقيد إلى<br/><em>السيطرة الكاملة.</em></h2></div>
+        <p>نصمم ونطبق أنظمة تخطيط موارد المؤسسات للمصانع الكبيرة وشبكات نقاط البيع الضخمة؛ لتعمل الإنتاج والمخزون والمبيعات والمحاسبة والموارد البشرية ضمن منظومة واحدة مترابطة.</p>
+      </div>
+      <div className="erp-audience">
+        <article><span>01</span><h3>المصانع الكبيرة</h3><p>تخطيط إنتاج دقيق، تتبع المواد الخام، وربط خطوط الإنتاج بالمخزون والمبيعات آلياً.</p></article>
+        <article><span>02</span><h3>شبكات نقاط البيع</h3><p>ربط الفروع بالمخزون المركزي والتقارير المالية لحظياً، مع تحديث كل عملية بيع مباشرة.</p></article>
+        <article><span>03</span><h3>الشركات سريعة التوسع</h3><p>الانتقال من الأنظمة المنفصلة وإكسل والجرد اليدوي إلى منصة موحّدة قابلة للنمو.</p></article>
+      </div>
+      <div className="erp-value">
+        <div><small>01</small><b>رؤية واحدة موحّدة</b><p>بيانات موحدة بين الإنتاج والمخزون والمبيعات والمحاسبة والموارد البشرية، بلا ازدواج أو تعارض.</p></div>
+        <div><small>02</small><b>تخطيط إنتاج دقيق</b><p>معرفة الاحتياج من المواد الخام، نقاط إعادة الطلب، وتوقيت دفعات الإنتاج القادمة.</p></div>
+        <div><small>03</small><b>POS مرتبط بالمخزون</b><p>كل عملية بيع في أي فرع تحدّث المخزون والتقارير المالية فوراً.</p></div>
+        <div><small>04</small><b>تقارير لحظية</b><p>قرارات مالية وإدارية مبنية على أرقام حقيقية ومحدّثة، لا على تقديرات متأخرة.</p></div>
+        <div><small>05</small><b>قابلية للتوسع</b><p>إضافة فروع وخطوط إنتاج ومستخدمين مع نمو الأعمال دون إعادة بناء النظام من الصفر.</p></div>
+      </div>
+      <div className="erp-method">
+        <div className="erp-method-title"><span>منهجية التنفيذ</span><h3>نبدأ من العملية،<br/>لا من البرنامج.</h3></div>
+        <ol>
+          <li><span>01</span><div><b>دراسة العمليات الحالية</b><p>فهم سير العمل الفعلي بكل قسم قبل أي تنفيذ.</p></div></li>
+          <li><span>02</span><div><b>تصميم النظام</b><p>هيكلة تناسب طبيعة المصنع أو شبكة الفروع، لا قالباً عاماً جاهزاً.</p></div></li>
+          <li><span>03</span><div><b>التطبيق والربط</b><p>ربط الإنتاج والمخزون والمبيعات ونقاط البيع والمحاسبة في تدفق واحد.</p></div></li>
+          <li><span>04</span><div><b>التدريب والتسليم</b><p>تمكين الفريق لضمان انتقال سلس واستمرارية العمليات.</p></div></li>
+          <li><span>05</span><div><b>الدعم المستمر</b><p>متابعة وصيانة وتطوير يحافظ على استقرار النظام مع نمو الأعمال.</p></div></li>
+        </ol>
+      </div>
+      <div className="erp-cta"><div><span>جاهز تبدأ؟</span><h3>خلّنا نفهم عملياتك أول.</h3><p>كل مصنع وشبكة نقاط بيع لها واقع مختلف. ندرس احتياجك ونقترح الحل الأنسب لحجمك وميزانيتك.</p></div><a href="https://wa.me/971523034693?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%B9%D9%86%20%D8%A3%D9%86%D8%B8%D9%85%D8%A9%20ERP" target="_blank" rel="noopener noreferrer">احجز استشارة أولية مجانية <i>↗</i></a></div>
+    </section>
     <section className="ims" id="ims">
       <div className="ims-intro">
         <div><span className="section-no light">خدمة متخصصة / IMS 2026</span><h2>نظام إدارة متكامل.<br/><em>جاهز للتطبيق.</em></h2></div>

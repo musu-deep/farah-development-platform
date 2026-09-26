@@ -564,3 +564,47 @@ footer > small { color: #897a9b; }
   .ims-standards > span { border-left: 0; border-bottom: 1px solid rgba(219, 201, 249, .18); }
   .ims-groups article { padding: 23px; }
 }
+
+/* ERP specialized service */
+.erp { padding: 130px 7vw; background: linear-gradient(145deg,#fbfafc 0%,#f1ecf7 100%); color:#241a2f; }
+.erp-head { display:grid; grid-template-columns:1.1fr .9fr; gap:8vw; align-items:end; margin-bottom:60px; }
+.erp-head h2 { margin:18px 0 0; font-size:clamp(44px,6vw,82px); line-height:1.25; }
+.erp-head h2 em { color:#7443b8; font-style:normal; font-weight:500; }
+.erp-head>p { margin:0; color:#665b70; font-size:15px; line-height:2.1; }
+.erp-audience { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px; }
+.erp-audience article { padding:30px; min-height:230px; background:#fff; border:1px solid rgba(86,48,154,.14); }
+.erp-audience article>span,.erp-value small { color:#8b58d3; font-size:11px; letter-spacing:.08em; }
+.erp-audience h3 { margin:34px 0 12px; font-size:22px; }
+.erp-audience p,.erp-value p { margin:0; color:#716779; font-size:12px; line-height:1.9; }
+.erp-value { display:grid; grid-template-columns:repeat(5,1fr); border:1px solid rgba(86,48,154,.14); background:#fff; }
+.erp-value>div { padding:25px 22px; border-left:1px solid rgba(86,48,154,.12); }
+.erp-value>div:last-child { border-left:0; }
+.erp-value b { display:block; margin:14px 0 9px; font-size:14px; }
+.erp-method { display:grid; grid-template-columns:.72fr 1.28fr; gap:7vw; margin-top:75px; padding:55px; color:#fff; background:linear-gradient(135deg,#1b102c,#32194f); }
+.erp-method-title>span { color:#c6a7fb; font-size:11px; }
+.erp-method-title h3 { margin:18px 0 0; font-size:clamp(30px,3.8vw,52px); line-height:1.4; }
+.erp-method ol { margin:0; padding:0; list-style:none; }
+.erp-method li { display:grid; grid-template-columns:48px 1fr; gap:18px; padding:18px 0; border-top:1px solid rgba(255,255,255,.14); }
+.erp-method li>span { color:#b78cec; font-size:11px; }
+.erp-method li b { font-size:15px; }
+.erp-method li p { margin:5px 0 0; color:#bfb0d3; font-size:11px; line-height:1.8; }
+.erp-cta { display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; margin-top:18px; padding:36px 42px; background:linear-gradient(125deg,#eadffa,#f5ecdf); }
+.erp-cta span { color:#7547b5; font-size:11px; }
+.erp-cta h3 { margin:8px 0; font-size:26px; }
+.erp-cta p { margin:0; color:#655a6d; font-size:12px; }
+.erp-cta a { padding:16px 22px; background:#2d1945; color:#fff; font-size:12px; white-space:nowrap; }
+.erp-cta a i { margin-right:20px; font-style:normal; }
+@media (max-width:900px) {
+  .erp-head,.erp-method { grid-template-columns:1fr; }
+  .erp-audience { grid-template-columns:1fr; }
+  .erp-value { grid-template-columns:1fr 1fr; }
+  .erp-value>div { border-bottom:1px solid rgba(86,48,154,.12); }
+  .erp-cta { grid-template-columns:1fr; }
+}
+@media (max-width:560px) {
+  .erp { padding:90px 6vw; }
+  .erp-value { grid-template-columns:1fr; }
+  .erp-method { padding:30px 24px; }
+  .erp-cta { padding:30px 24px; }
+  .erp-cta a { white-space:normal; text-align:center; }
+}
